@@ -12,14 +12,14 @@ import {
 export class CreateEquipoDto {
   @IsString()
   @IsNotEmpty()
-  @MinLength(3)
-  @MaxLength(30)
+  @MinLength(3, {message: 'codigo Inventario debe tener 3 caracteres como minimo'})
+  @MaxLength(50)
   @Matches(/\S/)
   codigoInventario!: string;
  
   @IsString()
   @IsNotEmpty()
-  @MinLength(3)
+  @MinLength(3, {message: 'nombre debe tener 3 caracteres como minimo'})
   @MaxLength(100)
   @Matches(/\S/)
   nombre!: string;
